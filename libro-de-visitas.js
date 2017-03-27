@@ -20,6 +20,7 @@ function publicarComentario() {
 	var lineaSeparadora = document.createElement("hr");
 
 	nuevosComentarios.insertBefore(lineaSeparadora, nuevosComentarios.firstChild);
+	comentarioEnTiempoReal.removeAttribute("style");
 	}
 
 function letraChica(){
