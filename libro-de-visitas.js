@@ -1,62 +1,68 @@
 
+var ingresarComentario = document.getElementById("ingresarComentario");
+var comentarioEnTiempoReal = document.getElementById("comentarioEnTiempoReal");
+
 function duplicar() {
 
-var vistaPrevia = document.getElementById("ingresarComentario").value;
-document.getElementById("comentarioEnTiempoReal").innerHTML = vistaPrevia;
-
+comentarioEnTiempoReal.innerHTML = ingresarComentario.value;
 
 }
 
 function publicarComentario() {
-	//Se comienza guardando el valor que el usurio ingrese en la <textarea> en una variable par así poderlo reproducir y publicar.
-	var comentarioPublicado = document.getElementById("comentarioEnTiempoReal").innerHTML;
-	//Esta línea indica que desea crea un elemento igual a nuestro parrafo elegidoS
-	var espacioParaPublicar = document.createElement("li");
-	espacioParaPublicar.innerHTML = comentarioPublicado;
-	document.getElementById("comentariosPublicados").appendChild(espacioParaPublicar);
+	//Se comienza guardando el valor que el usurio ingrese en comentarioEnTiempoReal, clonando todos sus atributos, para así poderlo publicar d emanera identica.
+
+	var comentarioPublicado = document.getElementById("comentarioEnTiempoReal").cloneNode(true);
+
+
+	var nuevosComentarios = document.getElementById("comentariosPublicados");
+
+	nuevosComentarios.insertBefore(comentarioPublicado, nuevosComentarios.firstChild);
+
+	var lineaSeparadora = document.createElement("hr");
+
+	nuevosComentarios.insertBefore(lineaSeparadora, nuevosComentarios.firstChild);
+
 	
 	}
 
 function letraChica(){
-	var tamañoChico = document.getElementById("comentarioEnTiempoReal");
-	tamañoChico.style = "font-size: 12px";
+	comentarioEnTiempoReal.style.fontSize = "20px";
+
 }
 
 function letraMediana() {
-	var tamañoMedio = document.getElementById("comentarioEnTiempoReal");
-	tamañoMedio.style = "font-size: 25px";
+	comentarioEnTiempoReal.style.fontSize = "40px";
 }
 
 function letraGrande(){
-	var tamañoGrande = document.getElementById("comentarioEnTiempoReal");
-	tamañoGrande.style = "font-size: 40px"
+	comentarioEnTiempoReal.style.fontSize = "80px";
 }
+
 function colorDeTexto(){
 	var eleccionUsuario = prompt("Ingresa el código hexadecimal del color de texto que desees:  ");
 	eleccionUsuario = "#" + eleccionUsuario;
-	document.getElementById("comentarioEnTiempoReal").style.color = eleccionUsuario;
+	comentarioEnTiempoReal.style.color = eleccionUsuario;
+	
 }
 
 function alinearIzquierda() {
-	var aLaIzquierda = document.getElementById("comentarioEnTiempoReal");
-	aLaIzquierda.style.textAlign = "left";
+	comentarioEnTiempoReal.style.textAlign = "left";
 }
 
 function centrar() {
-	var centrar = document.getElementById("comentarioEnTiempoReal");
-	centrar.style.textAlign = "center";
+	comentarioEnTiempoReal.style.textAlign = "center";
 }
 
 function alinearDerecha() {
-	var aLaDereha = document.getElementById("comentarioEnTiempoReal");
-	aLaDereha.style.textAlign = "right";
+	comentarioEnTiempoReal.style.textAlign = "right";
 }
 
 
 function colorDeFondo(){
 	var eleccionUsuario = prompt("Ingresa el código hexadecimal del color de fondo que desees:  ");
 	eleccionUsuario = "#" + eleccionUsuario;
-	document.getElementById("comentarioEnTiempoReal").style.backgroundColor = eleccionUsuario;
+	comentarioEnTiempoReal.style.backgroundColor = eleccionUsuario;
+	
 }
 
  
