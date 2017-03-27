@@ -11,8 +11,7 @@ comentarioEnTiempoReal.innerHTML = ingresarComentario.value;
 function publicarComentario() {
 	//Se comienza guardando el valor que el usurio ingrese en comentarioEnTiempoReal, clonando todos sus atributos, para así poderlo publicar d emanera identica.
 
-	var comentarioPublicado = document.getElementById("comentarioEnTiempoReal").cloneNode(true);
-
+	var comentarioPublicado = comentarioEnTiempoReal.cloneNode(true);
 
 	var nuevosComentarios = document.getElementById("comentariosPublicados");
 
@@ -21,8 +20,6 @@ function publicarComentario() {
 	var lineaSeparadora = document.createElement("hr");
 
 	nuevosComentarios.insertBefore(lineaSeparadora, nuevosComentarios.firstChild);
-
-	
 	}
 
 function letraChica(){

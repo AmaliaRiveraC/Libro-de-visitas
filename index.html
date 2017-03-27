@@ -6,21 +6,20 @@
 </head>
 <body>
 	<header>
-		<h1>Libro de visitas en proceso</h1>
-		<h2>¡Bienvenido al desarrollo web!</h2>
+		<h2 align="center">¡Bienvenid@ al desarrollo web!</h2>
 	</header>
 	
 	<h3>Comentarios de los artículos</h3>
-		<section id="nuevosComentarios">
+		
 	
 			<ul>
 				<li type="none"  id="comentariosPublicados">
-					<div name="comentariosPublicados" style="border: 1px color: black"><hr width="800"  align="left"></div>
+					<div name="comentariosPublicados" id="nuevosComentarios" style="border: 1px color: black"><hr width="800"  align="left"></div>
 				
 				</li>
 			
 			</ul>
-		</section>
+		
 	<form>
 		<h3>Crear artículo</h3>
 		<input type="button" value="Texto Grande" onclick="letraGrande()">
@@ -33,13 +32,13 @@
 		<input type="button" value="Alinear Derecha" onclick="alinearDerecha()">
 		<div>
 			
-			<textarea name="ingresarComentario" id="ingresarComentario" placeholder="Escribe aquí tu artículo" oninput="duplicar()" style="width: 787px; height: 150px"></textarea>
+			<textarea name="ingresarComentario" id="ingresarComentario" placeholder="Escribe aquí tu artículo" value="comentario" oninput="duplicar()" style="width: 787px; height: 150px"></textarea>
 		</div>
 	</form>
 	<div>
 		<h3>Cómo se ve tu artículo</h3>
 
-		<p name="comentarioEnTiempoReal" id="comentarioEnTiempoReal" value=""> </p>
+		<p name="comentarioEnTiempoReal" id="comentarioEnTiempoReal"> </p>
 		<hr>
 		<input type="submit" value="Enviar" onclick="publicarComentario();">
 	</div>
